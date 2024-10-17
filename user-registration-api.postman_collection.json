@@ -1,0 +1,99 @@
+{
+    "info": {
+      "name": "User Registration API",
+      "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+      "description": "Postman collection for testing User Registration API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "User Registration",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/api/users/register",
+            "host": ["{{baseUrl}}"],
+            "path": ["api", "users", "register"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"username\": \"mohit\",\n    \"email\": \"mohit@example.com\",\n    \"password\": \"password123\"\n}"
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "User Login",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/api/users/login",
+            "host": ["{{baseUrl}}"],
+            "path": ["api", "users", "login"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"email\": \"mohit@example.com\",\n    \"password\": \"password123\"\n}"
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Create Profile",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/api/profiles",
+            "host": ["{{baseUrl}}"],
+            "path": ["api", "profiles"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"bio\": \"Software Developer\",\n    \"location\": \"Jabalpur\"\n}"
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Profile",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}"
+            }
+          ],
+          "url": {
+            "raw": "{{baseUrl}}/api/profiles",
+            "host": ["{{baseUrl}}"],
+            "path": ["api", "profiles"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
